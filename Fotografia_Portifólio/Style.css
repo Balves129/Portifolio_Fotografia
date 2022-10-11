@@ -1,6 +1,23 @@
+[data-component = "slideshow"] .slide{
+    display: none;
+}
+[data-component = "slideshow"] .slide.active{
+    display: block;
+}
+
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+.imagens{
+    display: flex;
+    background-size: cover;
+    width: 92vw;
+    height: 100vh;
+    margin-left: 50px;
+    border-radius: 40px;
+
 }
 
 nav{
@@ -43,8 +60,8 @@ main{
 
 .logo{
     position: absolute;
-    margin-right: 80vw;
-    letter-spacing: 3px;
+    margin-right: 60vw;
+    letter-spacing: 4px;
     text-decoration: none;
     color: black;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
@@ -53,6 +70,7 @@ main{
 .menu{
     cursor: pointer;
     display: none;
+    width: 0px;
 }
 
 .menu div{
@@ -84,11 +102,21 @@ main{
     }
     .menu{
         display: block;
-        position: relative;
-        left: 17vh;
     }
 }
-
+.nav_list.active{
+    transform: translateX(0%);
+}
+@keyframes navLinkFade{
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
 
 
 
